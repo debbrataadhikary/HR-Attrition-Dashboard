@@ -64,7 +64,7 @@ This segment segments the workforce to pinpoint specific high-risk organizationa
 
 ![Demographic Analysis View](Images/Demographic_Analysis.png)
 
-4. Advanced Technical Proficiency and Skill Showcase (সংশোধিত)
+4. Advanced Technical Proficiency and Skill Showcase 
 This project serves as a showcase of high-level proficiency in Microsoft Excel's Business Intelligence stack, demonstrating an ability to transform raw data into an analytical model.
 
 4.1. Data Modeling and Power Pivot Mastery
@@ -96,5 +96,6 @@ To access the interactive dashboard and utilize the dynamic filtering capabiliti
 2.  **View:** Open the file using Microsoft Excel (Excel 2016 or newer recommended).
 
 3.  **Analyze:** Use the interactive slicers to drill down into the high-risk segments identified above.
+
 
 

@@ -36,7 +36,7 @@ This section is vital for identifying burnout risk. It reveals the correlation b
 
 * **Key Finding Example:** Often, employees in the lowest salary slab who are forced to work overtime have the highest attrition rates, signaling a critical retention failure point.
 
-![Compensation and Workload Analysis View](Images/Compensation.png)
+![Compensation and Workload Analysis View](Images/Copensation.png)
 
 ### 3.3 Deep Dive 2: Job Satisfaction and Wellbeing
 
@@ -54,7 +54,7 @@ This visual addresses whether the company provides adequate growth opportunities
 * **Focus Metrics:** Years Since Last Promotion and Total Working Years.
 * **Key Finding Example:** Employees who have been with the company for 3-5 years but have not received a promotion in the last 4 years show a sharp spike in attrition.
 
-![Career Progression Analysis View](Images/Carrier_Progression.png)
+![Career Progression Analysis View](Images/Carrer_Progression.png)
 
 ### 3.5 Deep Dive 4: Demographic and Departmental Risk
 
@@ -80,4 +80,5 @@ To access the interactive dashboard and utilize the dynamic filtering capabiliti
 
 1.  **Download:** Download the `HR_Attrition_Dashboard.xlsx` file.
 2.  **View:** Open the file using Microsoft Excel (Excel 2016 or newer recommended).
+
 3.  **Analyze:** Use the interactive slicers to drill down into the high-risk segments identified above.

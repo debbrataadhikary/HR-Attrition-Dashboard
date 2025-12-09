@@ -64,15 +64,8 @@ This segment segments the workforce to pinpoint specific high-risk organizationa
 
 ![Demographic Analysis View](Images/Demographic_Analysis.png)
 
-## 4. Key Analytical Insights and Mitigation Strategies
-
-While the interactive experience requires the Excel file, a few crucial high-value insights derived from the analysis are highlighted here:
-
-| Finding Category | Analytical Finding | Mitigation Strategy |
-| :--- | :--- | :--- |
-| **Financial Risk** | Total Attrition Cost exceeds \$500,000 annually, justifying immediate investment in retention programs. | Implement a mandatory exit interview process to capture data and allocate a dedicated retention budget based on this cost calculation. |
-| **High-Risk Segment** | Employees in the "Sales" department who are in the "Early Career (18-25)" group and work Over Time account for 40% of the total attrition count. | Develop a targeted mentorship program and review compensation/commission structures specifically for the Early Career Sales team to reduce immediate churn. |
-| **Stagnation Point** | The average time between promotion requests and attrition for non-promoted employees is 18 months, indicating a major frustration point. | Introduce a career pathing workshop for all employees who have not received a promotion in 12 months. |
+## 4. Tecnical Proficiency and Skill Showcase 
+This project serves as a showcase of high-level proficiency in Microsoft Excel's Business Intelligence stack, demonstrating an ability to transform raw data into an analytical model.4.1. Data Modeling and Power Pivot MasteryThe foundation of the dashboard is a robust Data Model constructed in Power Pivot, proving the capability to handle and integrate large datasets beyond Excel's traditional row limits.Integrated Model: Establishing relationships between various data tables (where applicable) to ensure seamless filtering across all report sheets.Hierarchical Structure: Implementing time-intelligence or categorical hierarchies to streamline complex calculations and navigation.Performance Optimization: Ensuring the Data Model is optimized for fast calculation speed, even when filtering through multiple interactive slicers.4.2. Complex DAX Logic for Business IntelligenceThe dashboard utilizes specialized $\text{DAX}$ functions to create sophisticated metrics that provide true business value, moving beyond simple SUMs and AVERAGES.Time-Intelligence (Advanced $\text{DAX}$): (If applicable, mention YTD or YoY calculations here) Demonstrating the use of functions like $\text{CALCULATE}$ and $\text{DATESYTD}$ to show trends over time.Financial Simulations: Implementing advanced $\text{DAX}$ logic to create financial measures (like $\text{Attrition Cost}$) that quantify abstract $\text{HR}$ outcomes into concrete monetary value for executive reporting.Custom Classification: Using $\text{DAX}$ or $\text{Power Query}$ to create valuable segmentation columns, such as $\text{Custom\_Age\_Group}$ (Early Career, Growth Stage, etc.), which are crucial for high-value root-cause analysis.4.3. Dynamic Dashboard InteractivityThe final output is not a static report but a fully dynamic analytical tool:Cross-Report Filtering: The six primary $\text{Slicers}$ on the main sheet are connected to all underlying $\text{PivotTables}$ and charts, enabling real-time drill-down analysis across all analytical focus areas (Demographics, Compensation, Satisfaction, etc.).User Experience (UX) Focus: Designing a clean, intuitive interface that makes it easy for non-technical $\text{HR}$ professionals to access complex $\text{DAX}$ calculations and perform ad-hoc analysis.
 
 ## 5. Access and Usage
 
@@ -82,3 +75,4 @@ To access the interactive dashboard and utilize the dynamic filtering capabiliti
 2.  **View:** Open the file using Microsoft Excel (Excel 2016 or newer recommended).
 
 3.  **Analyze:** Use the interactive slicers to drill down into the high-risk segments identified above.
+

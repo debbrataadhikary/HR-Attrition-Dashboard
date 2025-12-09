@@ -64,24 +64,24 @@ This segment segments the workforce to pinpoint specific high-risk organizationa
 
 ![Demographic Analysis View](Images/Demographic_Analysis.png)
 
-4. Advanced Technical Proficiency and Skill Showcase 
+### 4. Advanced Technical Proficiency and Skill Showcase 
 This project serves as a showcase of high-level proficiency in Microsoft Excel's Business Intelligence stack, demonstrating an ability to transform raw data into an analytical model.
 
-4.1. Data Modeling and Power Pivot Mastery
+### 4.1. Data Modeling and Power Pivot Mastery
 The foundation of the dashboard is a robust Data Model constructed in Power Pivot, proving the capability to handle and integrate large datasets beyond Excel's traditional row limits.
 
 Integrated Model: Establishing relationships between various data tables (where applicable) to ensure seamless filtering across all report sheets.
 
 Performance Optimization: Ensuring the Data Model is optimized for fast calculation speed, even when filtering through multiple interactive slicers.
 
-4.2. Complex DAX Logic for Business Intelligence
+### 4.2. Complex DAX Logic for Business Intelligence
 The dashboard utilizes specialized DAX functions to create sophisticated metrics that provide true business value, moving beyond simple SUMs and AVERAGES.
 
 Financial Simulations: Implementing advanced DAX logic to create financial measures (like Attrition Cost) that quantify abstract HR outcomes into concrete monetary value for executive reporting.
 
 Custom Classification: Using DAX or Power Query to create valuable segmentation columns, such as Custom_Age_Group (Early Career, Growth Stage, etc.), which are crucial for high-value root-cause analysis.
 
-4.3. Dynamic Dashboard Interactivity
+### 4.3. Dynamic Dashboard Interactivity
 The final output is not a static report but a fully dynamic analytical tool:
 
 Cross-Report Filtering: The six primary Slicers on the main sheet are connected to all underlying PivotTables and charts, enabling real-time drill-down analysis across all analytical focus areas (Demographics, Compensation, Satisfaction, etc.).
@@ -96,6 +96,7 @@ To access the interactive dashboard and utilize the dynamic filtering capabiliti
 2.  **View:** Open the file using Microsoft Excel (Excel 2016 or newer recommended).
 
 3.  **Analyze:** Use the interactive slicers to drill down into the high-risk segments identified above.
+
 
 
 

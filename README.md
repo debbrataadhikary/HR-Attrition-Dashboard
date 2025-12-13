@@ -1,101 +1,127 @@
-# HR Attrition Analytics Dashboard: Quantifying Turnover Risk
+# HR Attrition Analytics Dashboard: Risk Segmentation & Cost Impact Analysis
 
-## 1. Project Goal and Strategic Impact
+## 1. Project Purpose and Business Relevance
 
-This project transcends standard HR reporting by deploying advanced analytical techniques using Microsoft Excel's Power Pivot ecosystem.
+This project moves beyond descriptive HR reporting to demonstrate how **data-driven risk segmentation** can support strategic workforce decisions.
 
-**The core strategic objective is twofold:**
-1.  **Predictive Risk Modeling:** To identify and segment high-risk employee populations based on demographic, satisfaction, and career variables.
-2.  **Financial Quantification:** To precisely calculate the total financial burden of employee attrition, thereby translating an HR problem into a critical business cost.
+**Primary objectives:**
+1. **Attrition Risk Identification:** Identify high-risk employee segments by analysing satisfaction, workload, compensation, tenure, and demographic variables.
+2. **Business Impact Translation:** Quantify employee attrition in financial terms to support prioritisation of retention interventions.
 
-The result is a dynamic, interactive tool that allows executive leadership to move beyond guesswork and focus mitigation resources where they yield the highest Return on Investment (ROI).
+The output is an interactive Excel-based analytics dashboard that enables decision-makers to understand **where attrition risk is concentrated**, **which factors amplify that risk**, and **which segments should be addressed first for maximum impact**.
 
-## 2. Core DAX Logic: Financial and Attrition KPIs
+---
 
-The dashboard's value is derived from robust DAX measures that define organizational health and financial loss.
+## 2. Core Metrics and DAX-Based KPIs
 
-| KPI Measure | Calculation Logic | Strategic Purpose |
-| :--- | :--- | :--- |
-| **Attrition Rate** | `DIVIDE(Attrition Count, Total Employees)` | The primary metric to benchmark turnover against industry standards and organizational goals. |
-| **Attrition Cost** | `SUMX(FILTER(HR Data, [Attrition]="Yes"), [MonthlyIncome] * 0.5)` | **Quantifies financial loss.** Calculated by summing an estimated cost-to-replace (assumed to be 50% of monthly salary) for every employee who attrited. This provides a direct dollar value for mitigation efforts. |
-| **Avg Cost Per Attrition** | `DIVIDE([Attrition Cost], [Attrition Count])` | Allows for benchmarking the cost impact of specific roles or departments. |
+The analytical foundation of the dashboard is built using Power Pivot and DAX measures, ensuring metric consistency across all slicers and views.
 
-## 3. Visual Analysis Breakdown (The Insights Preview)
+| KPI | Definition | Business Interpretation |
+|---|---|---|
+| **Total Employees** | `COUNTROWS(HR_Data)` | Workforce baseline for all rate calculations |
+| **Attrition Count** | Employees where Attrition = "Yes" | Absolute turnover volume |
+| **Attrition Rate** | `DIVIDE(Attrition Count, Total Employees)` | Primary risk metric used as the organisational baseline (16.08%) |
+| **Estimated Attrition Cost** | `SUMX(FILTER(HR_Data, Attrition="Yes"), MonthlyIncome * 0.5)` | Approximated replacement cost (50% of monthly salary assumption) |
+| **Avg Cost per Attrition** | Attrition Cost / Attrition Count | Enables role- and department-level cost comparison |
 
-The images below demonstrate the analytical capabilities, highlighting the crucial relationships between employee factors and turnover risk.
+> **Note:** Financial assumptions are intentionally simplified and explicitly stated to ensure transparency and analytical defensibility.
 
-### 3.1 Main Dashboard Control Panel
+---
 
-The primary view provides instant visibility into the three main KPIs and serves as the interactive control center for all analysis with six key slicers (Job Role, Department, Age Group, etc.).
+## 3. Analytical Framework and Key Insights
 
-![HR People Analytics Dashboard Main View](Images/HR_Attrition_Dashboard.png)
+### 3.1 Interactive Control Dashboard
 
-### 3.2 Deep Dive 1: Compensation and Workload Correlation
+The main dashboard consolidates core KPIs and serves as the control layer for the entire analysis.  
+All visuals are dynamically linked using slicers (Department, Job Role, Age Group, OverTime, Gender, etc.), enabling contextual drill-down without recalculating metrics.
 
-This section is vital for identifying burnout risk. It reveals the correlation between **low income segments** and employees working **Over Time**. The visual clarity shows whether increased workload, without adequate compensation, directly drives attrition.
+![Main Dashboard](Images/HR_Attrition_Dashboard.png)
 
-* **Key Finding Example:** Often, employees in the lowest salary slab who are forced to work overtime have the highest attrition rates, signaling a critical retention failure point.
+---
 
-![Compensation and Workload Analysis View](Images/Copensation.png)
+### 3.2 Workload & Overtime Risk Analysis
 
-### 3.3 Deep Dive 2: Job Satisfaction and Wellbeing
+This section evaluates whether workload intensity is associated with higher attrition risk.
 
-This analysis clearly visualizes the link between employee morale and turnover. Low scores in satisfaction metrics are leading indicators of future attrition risk.
+**Key insights:**
+- Employees working overtime exhibit attrition rates nearly **3x higher** than those who do not.
+- When overtime is combined with low satisfaction or weak work-life balance, attrition risk increases further, indicating **interaction effects rather than isolated drivers**.
 
-* **Focus Metrics:** Job Satisfaction (1-4 Scale) and Work-Life Balance.
-* **Key Finding Example:** Reveals that "Laboratory Technicians" with a low "Job Satisfaction" rating of 1 are leaving at a 3x higher rate than the company average.
+![Compensation and Workload Analysis](Images/Copensation.png)
 
-![Job Satisfaction and Wellbeing Analysis View](Images/Satisfaction.png)
+---
 
-### 3.4 Deep Dive 3: Career Progression and Tenure Risk
+### 3.3 Job Satisfaction & Work-Life Balance
 
-This visual addresses whether the company provides adequate growth opportunities. Attrition linked to long tenure with no recent promotion is known as 'Stagnation Risk'.
+These factors show the strongest deviation from the company baseline.
 
-* **Focus Metrics:** Years Since Last Promotion and Total Working Years.
-* **Key Finding Example:** Employees who have been with the company for 3-5 years but have not received a promotion in the last 4 years show a sharp spike in attrition.
+**Observed patterns:**
+- Employees with **low work-life balance** show attrition rates close to **31%**, compared to the organisational average of **16%**.
+- High satisfaction and strong work-life balance consistently reduce attrition below baseline, identifying these as **high-impact retention levers**.
 
-![Career Progression Analysis View](Images/Carrer_Progression.png)
+![Satisfaction Analysis](Images/Satisfaction.png)
 
-### 3.5 Deep Dive 4: Demographic and Departmental Risk
+---
 
-This segment segments the workforce to pinpoint specific high-risk organizational units and employee demographics.
+### 3.4 Career Progression & Stagnation Risk
 
-* **Focus Metrics:** Attrition rates by Department (e.g., Sales vs. R&D) and Custom Age Group (e.g., Early Career vs. Mid-Career).
+This analysis focuses on tenure and promotion timelines to identify stagnation-driven attrition.
 
-![Demographic Analysis View](Images/Demographic_Analysis.png)
+**Key insights:**
+- Employees with moderate tenure but long gaps since last promotion show elevated attrition risk.
+- This suggests stagnation risk emerges **before long-term tenure**, supporting earlier intervention strategies.
 
-### 4. Advanced Technical Proficiency and Skill Showcase 
-This project serves as a showcase of high-level proficiency in Microsoft Excel's Business Intelligence stack, demonstrating an ability to transform raw data into an analytical model.
+![Career Progression Analysis](Images/Carrer_Progression.png)
 
-### 4.1. Data Modeling and Power Pivot Mastery
-The foundation of the dashboard is a robust Data Model constructed in Power Pivot, proving the capability to handle and integrate large datasets beyond Excel's traditional row limits.
+---
 
-Integrated Model: Establishing relationships between various data tables (where applicable) to ensure seamless filtering across all report sheets.
+### 3.5 Demographic & Departmental Segmentation
 
-Performance Optimization: Ensuring the Data Model is optimized for fast calculation speed, even when filtering through multiple interactive slicers.
+Attrition risk is unevenly distributed across departments and demographic groups.
 
-### 4.2. Complex DAX Logic for Business Intelligence
-The dashboard utilizes specialized DAX functions to create sophisticated metrics that provide true business value, moving beyond simple SUMs and AVERAGES.
+**Purpose of this view:**
+- Identify concentrated risk pockets rather than general trends
+- Support targeted interventions instead of organisation-wide policies
 
-Financial Simulations: Implementing advanced DAX logic to create financial measures (like Attrition Cost) that quantify abstract HR outcomes into concrete monetary value for executive reporting.
+![Demographic Analysis](Images/Demographic_Analysis.png)
 
-Custom Classification: Using DAX or Power Query to create valuable segmentation columns, such as Custom_Age_Group (Early Career, Growth Stage, etc.), which are crucial for high-value root-cause analysis.
+---
 
-### 4.3. Dynamic Dashboard Interactivity
-The final output is not a static report but a fully dynamic analytical tool:
+## 4. Technical Implementation & Skills Demonstrated
 
-Cross-Report Filtering: The six primary Slicers on the main sheet are connected to all underlying PivotTables and charts, enabling real-time drill-down analysis across all analytical focus areas (Demographics, Compensation, Satisfaction, etc.).
+### 4.1 Data Modelling & Power Pivot
+- Centralised data model enabling consistent calculations across all visuals
+- Efficient slicer connectivity across multiple PivotTables
+- Clear separation between raw data, calculated measures, and presentation layers
 
-User Experience (UX) Focus: Designing a clean, intuitive interface that makes it easy for non-technical HR professionals to access complex DAX calculations and perform ad-hoc analysis.
+### 4.2 DAX for Business-Oriented Metrics
+- Use of `CALCULATE`, `FILTER`, `SUMX`, and `DIVIDE` to preserve metric integrity under filtering
+- KPI design focused on decision support rather than vanity metrics
+- Explicit handling of assumptions and denominator consistency
 
-## 5. Access and Usage
+### 4.3 Dashboard Design & Usability
+- Executive-friendly layout prioritising signal over clutter
+- Real-time interactivity without manual recalculation
+- Designed for non-technical users to independently explore attrition drivers
 
-To access the interactive dashboard and utilize the dynamic filtering capabilities powered by Power Pivot and DAX, please follow the steps below:
+---
 
-1.  **Download:** Download the `HR_Attrition_Dashboard.xlsx` file.
-2.  **View:** Open the file using Microsoft Excel (Excel 2016 or newer recommended).
+## 5. Practical Use Case
 
-3.  **Analyze:** Use the interactive slicers to drill down into the high-risk segments identified above.
+In a real organisational context, this dashboard would support:
+- Identification of high-risk employee segments for targeted retention programmes
+- Estimation of financial upside from reducing attrition in specific roles or departments
+- Prioritisation of HR interventions based on **risk magnitude and cost impact**
+
+---
+
+## 6. Access Instructions
+
+1. Download `HR_Attrition_Dashboard.xlsx`
+2. Open using Microsoft Excel (2016 or newer recommended)
+3. Use slicers to explore attrition risk across multiple dimensions
+
+
 
 
 
